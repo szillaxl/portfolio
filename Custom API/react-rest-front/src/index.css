@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color:royalblue;
+  font-family: sans-serif;
+}
+.list-group{
+  color: royalblue;
+}
+
+#AlertDiv {
+    color:white;
+    text-align:center;
+    background-color:royalblue;
+   
+}
+
+#MAH {
+    margin:auto;
+    line-height:50px;
+    vertical-align:middle;
+    color:white;
+    text-align:center;
+    background-color:royalblue;
+}
+
+h1 {
+    margin:auto;
+    line-height:50px;
+    vertical-align:middle;
+    color:white;
+    text-align:center;
+    background-color:royalblue; 
+}
+
+button {
+  background-color:white; 
+}
+
+h2 {
+    color:white;
+    text-align:center;
+}

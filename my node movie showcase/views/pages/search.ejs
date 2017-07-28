@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+<div class="container">
+   <h2>Didn't find what you are looking for? Search IMDB to find your movie: </h2>
+    <form  method="post"  action="/imdb" class="form">
+        <div class="row">
+            <div class="col-md-3"><input required name="title" placeholder="Title" class="form-control" type="text"></div>
+            <div class="col-md-3"><input name="year" placeholder="Year" class="form-control" type="number"></div>
+            <div class="col-md-3">
+                <select name="type" class="form-control">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="form-control btn btn-success"> Search</button>
+            </div>
+        </div>
+    </form>
+    <h1 class="text-center">Movies Found</h1>
+    <div class="row">
+        <div class=buttons>
+            <a class="btn btn-primary" href=<%= '/' %>>Back</a>
+        </div>
+    </div>
+
+    <% movies.forEach(function (movie){ %>
+
+    <a class="movie-link" href=<%= 'movie/' + movie.id%>>
+        <div class="media movie-list-item">
+            <div class="media-left">
+                <div class="poster-container">
+                    <
+                    <img class="media-object movie-poster" src=<%= movie.poster || movie.Poster %> />
+                </div>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <%= movie.title || movie.Title %>
+                    <span class="badge"><%= movie.imdbRating  %></span>
+                </h4>
+                <div>
+                    <%= movie.plot || movie.Plot %>
+                </div>
+                <div class="released-date">
+                    Released: <%= movie.released || movie.Year %>
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+    <% })%>
+
+
+</div>
+</body>
+</html>
+

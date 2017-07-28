@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+<div class="container">
+    <h1 class="text-center">Movie Database</h1>
+    <form  method="post"  action="/search" class="form">
+        <div class="row">
+            <div class="col-md-6"><input required name="text" class="form-control" type="text"></div>
+            <div class="col-md-3">
+                <select name="type" class="form-control">
+                    <option value="title">Title</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="form-control btn btn-primary"> Search</button>
+            </div>
+        </div>
+    </form>
+
+    <% movies.forEach(function (movie){ %>
+
+    <a class="movie-link" href=<%= 'movie/' + movie.id %>>
+        <div class="media movie-list-item">
+            <div class="media-left">
+                <div class="poster-container">
+                    
+                    <img class="media-object movie-poster" src=<%= movie.poster || movie.Poster %> />
+                </div>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <%= movie.title || movie.Title %>
+                    <span class="badge"><%= movie.imdbRating || movie.Title %></span>
+                </h4>
+                <div>
+                    <%= movie.plot || movie.Plot %>
+                </div>
+                <div class="released-date">
+                    Released: <%= movie.released ||  movie.Year %>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <% })%>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+.bordr {
+    border: 1pX black solid;
+}
+
+.row > div > img{
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 15%;
+}
+
+h4 {
+    padding-bottom: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:20px 20px;
+    font-size:80%;
+    line-height: 1;
+    border-radius:3px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
